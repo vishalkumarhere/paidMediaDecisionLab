@@ -1,0 +1,27 @@
+{
+  "verified_at": "2026-08-31T15:25:54.8954061-04:00",
+  "application": "Luxe Cafe Streamlit interface",
+  "url": "http://127.0.0.1:8501",
+  "automated_tests": {
+    "report": "data/ui-test-results.xml",
+    "errors": 0,
+    "seconds": 19.1,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 35
+  },
+  "browser_checks": [
+    "Overview: four metric cards, trend chart and campaign spend bars render with readable labels",
+    "Meta filter updates campaign comparison and financial waterfall",
+    "Search C04 yields 112 matching campaign-day rows",
+    "Order economics waterfall labels visually verified after server restart"
+  ],
+  "foundation_manifest_sha256": "11a842e8cee7cfd8e33434c39d27486d0c5a1d3e71b89045f7de4d98ae022edb",
+  "limitations": [
+    "Synthetic portfolio data; no real SharkNinja results",
+    "Local read-only interface; no deployment, forecasts or automated recommendations",
+    "Table preview capped at 100 rows; CSV includes all matching rows",
+    "Windows blocks PyArrow native library; app uses DuckDB, Plotly JSON and escaped HTML without modifying security policy",
+    "Browser log contained transient disconnection errors during intentional restart and native metric Vega warnings; final server stderr contains startup message only"
+  ]
+}

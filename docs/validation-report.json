@@ -1,0 +1,62 @@
+{
+  "verified_at_utc": "2026-08-30T23:38:19.543622+00:00",
+  "release": "milestones_1_and_2",
+  "runtime": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.13",
+    "duckdb": "1.4.4"
+  },
+  "tests": {
+    "passed": 27,
+    "failed": 0,
+    "duration_seconds": 173.669
+  },
+  "sample_contract_checks_passed": 80,
+  "sample_warnings": [],
+  "independent_full_builds": 2,
+  "raw_and_processed_file_and_logical_hashes_match": true,
+  "sample_files_reopened_and_rehashed": 17,
+  "dataset_sha256": "a58df509f2034733824e62b6eb2cd02e4b39ccc59af96594a431a48f248b06e2",
+  "source_code_sha256": "4cdebe627d847262ed4f9550265b65c2c8a802c3e090bc506c5e4baf7c4eaa75",
+  "raw_row_counts": {
+    "campaigns": 6,
+    "creatives": 12,
+    "media": 1704,
+    "sessions": 25034,
+    "purchases": 1781,
+    "orders": 1862,
+    "refunds": 166,
+    "costs": 152,
+    "inventory": 142,
+    "promotions": 1,
+    "budgets": 852,
+    "platform_snapshots": 2736
+  },
+  "processed_row_counts": {
+    "order_economics": 1846,
+    "order_attribution": 1846,
+    "campaign_daily": 749,
+    "platform_latest": 672,
+    "reconciliation_daily": 112
+  },
+  "requested_destination": "C:\\Users\\visha\\Documents\\Codex\\Projects\\luxe-cafe-paid-media-decision-lab",
+  "destination_placement": "installed and verified in the user-approved permanent location",
+  "not_implemented": [
+    "UI",
+    "recommendation engine",
+    "maturity estimates",
+    "forecasting",
+    "deployment",
+    "outreach"
+  ],
+  "local_setup_verification": {
+    "verified_at_utc": "2026-08-31T03:16:51.006668+00:00",
+    "project_directory": "C:\\Users\\visha\\Documents\\Codex\\Projects\\luxe-cafe-paid-media-decision-lab",
+    "own_virtual_environment": true,
+    "tests_passed": 27,
+    "tests_failed": 0,
+    "test_duration_seconds": 100.995,
+    "sample_file_checksums_verified": 17,
+    "dependency_check": "No broken requirements found"
+  }
+}

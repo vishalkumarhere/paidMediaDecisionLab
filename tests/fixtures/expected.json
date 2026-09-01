@@ -1,0 +1,14 @@
+{
+  "explanation": "Independently hand-calculated cents. See docs/hand-calculated-example.md. Not produced by pipeline code.",
+  "orders": {
+    "O1": {"net_revenue_cents": 50000, "net_cogs_cents": 40000, "contribution_before_media_cents": 4500},
+    "O2": {"net_revenue_cents": 50000, "net_cogs_cents": 30000, "contribution_before_media_cents": 17500},
+    "O3": {"net_revenue_cents": 0, "net_cogs_cents": 0, "contribution_before_media_cents": 0},
+    "O4": {"net_revenue_cents": 50000, "net_cogs_cents": null, "contribution_before_media_cents": null}
+  },
+  "campaigns_july_6": {
+    "C01": {"net_revenue_cents": 50000, "spend_cents": 10000, "contribution_after_media_cents": -5500, "business_net_roas": 5.0},
+    "C06": {"net_revenue_cents": 50000, "spend_cents": 10000, "contribution_after_media_cents": 7500, "business_net_roas": 5.0}
+  }
+}
+

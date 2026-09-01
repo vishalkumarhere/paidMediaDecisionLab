@@ -1,0 +1,43 @@
+{
+  "campaigns": [
+    ["C01", "google", "branded_search", 30, "synthetic_observation"],
+    ["C06", "affiliate", "partner", 30, "synthetic_observation"]
+  ],
+  "creatives": [
+    ["A1", "C01", "fixture", "demo", "synthetic_observation"],
+    ["A2", "C01", "fixture", "demo", "synthetic_observation"],
+    ["B1", "C06", "fixture", "demo", "synthetic_observation"]
+  ],
+  "orders": [
+    ["O1", "1", "J1", "U1", "ES601", "2026-07-06T14:00:00Z", "2026-07-06T15:00:00Z", "fulfilled", 2, 120000, 20000, 2000, 3000, "synthetic_observation"],
+    ["O2", "1", "J2", "U2", "ES601", "2026-07-06T15:00:00Z", "2026-07-06T16:00:00Z", "fulfilled", 1, 60000, 10000, 1000, 1500, "synthetic_observation"],
+    ["O3", "1", "J3", "U3", "ES601", "2026-07-06T16:00:00Z", "2026-07-06T17:00:00Z", "cancelled", 1, 60000, 10000, 0, 0, "synthetic_observation"],
+    ["O4", "1", "J4", "U4", "ES601", "2026-07-07T14:00:00Z", "2026-07-07T15:00:00Z", "fulfilled", 1, 60000, 10000, 1000, 1500, "synthetic_observation"]
+  ],
+  "sessions": [
+    ["S1", "J1", "U1", "C01", "A1", "2026-07-06T13:00:00Z", "2026-07-06T13:30:00Z", "synthetic_observation"],
+    ["S2", "J2", "U2", "C06", "B1", "2026-07-06T14:00:00Z", "2026-07-06T14:30:00Z", "synthetic_observation"],
+    ["S3", "J3", "U3", "C01", "A2", "2026-07-06T15:00:00Z", "2026-07-06T15:30:00Z", "synthetic_observation"],
+    ["S4", "J4", "U4", "C06", "B1", "2026-07-07T13:00:00Z", "2026-07-07T13:30:00Z", "synthetic_observation"]
+  ],
+  "refunds": [
+    ["R1", "O1", "1", "2026-07-08T12:00:00Z", "2026-07-08T13:00:00Z", 20000, 0, 0, 0, 500, "synthetic_observation"],
+    ["R2", "O1", "1", "2026-07-09T12:00:00Z", "2026-07-09T13:00:00Z", 30000, 1, 20000, 1000, 0, "synthetic_observation"]
+  ],
+  "costs": [
+    ["2026-07-06", "ES601", 30000, "2026-07-06T00:00:00Z", "user_assumption"],
+    ["2026-07-07", "ES601", null, "2026-07-07T00:00:00Z", "user_assumption"]
+  ],
+  "media": [
+    ["2026-07-06", "C01", "A1", 1000, 20, 6000, "2026-07-07T10:00:00Z", "synthetic_observation"],
+    ["2026-07-06", "C01", "A2", 1000, 20, 4000, "2026-07-07T10:00:00Z", "synthetic_observation"],
+    ["2026-07-06", "C06", "B1", null, 10, 10000, "2026-07-07T10:00:00Z", "synthetic_observation"],
+    ["2026-07-07", "C06", "B1", null, 10, 1000, "2026-07-08T10:00:00Z", "synthetic_observation"]
+  ],
+  "platform_snapshots": [
+    ["google", "C01", "2026-07-06", "2026-07-07T12:00:00Z", 1, 100000, "purchase_date", "net_of_discount_before_refunds", "synthetic_observation"],
+    ["google", "C01", "2026-07-06", "2026-07-10T12:00:00Z", 1, 100000, "purchase_date", "net_of_discount_before_refunds", "synthetic_observation"],
+    ["affiliate", "C06", "2026-07-06", "2026-07-07T12:00:00Z", 1, 50000, "purchase_date", "net_of_discount_before_refunds", "synthetic_observation"]
+  ]
+}
+

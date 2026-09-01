@@ -1,0 +1,24 @@
+{
+  "seed": 42,
+  "report_start": "2026-05-04",
+  "report_end": "2026-08-23",
+  "as_of": "2026-08-24T12:00:00+00:00",
+  "timezone": "America/New_York",
+  "warmup_days": 30,
+  "business_click_window_days": 7,
+  "conversion_maturity_days": 14,
+  "return_maturity_days": 36,
+  "metric_version": "1.0.0",
+  "synthetic_list_price_cents": 59999,
+  "synthetic_unit_cost_cents": 27000,
+  "sessions_per_campaign_day": 22,
+  "prototype_policy": {
+    "minimum_mature_orders": 30,
+    "maximum_test_budget_change_fraction": 0.1,
+    "tracking_gap_fraction": 0.2,
+    "tracking_gap_minimum_commerce_orders": 10,
+    "budget_baseline_complete_days": 7,
+    "missing_costs_block_growth": true,
+    "unresolved_data_errors_block_growth": true
+  }
+}

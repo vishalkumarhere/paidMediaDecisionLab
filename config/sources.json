@@ -1,0 +1,19 @@
+{
+  "disclaimer": "Independent portfolio project. Not affiliated with SharkNinja. All performance, campaigns, prices over time and costs are synthetic assumptions, not actual company results.",
+  "product": {
+    "name": "Ninja Luxe Cafe Premier",
+    "model": "ES601",
+    "market": "US",
+    "source_class": "public_fact",
+    "url": "https://www.sharkninja.com/ninja-luxe-cafe-premier-3-in-1-espresso-coffee-cold-brew/ES601.html",
+    "research_date": "2026-08-30"
+  },
+  "simulation": {
+    "source_class": "user_assumption",
+    "historical_price_claim": false,
+    "platform_defaults_claim": false,
+    "real_customer_data": false,
+    "description": "Fictional 16-week reporting period with 30 days of warmup and future conversion/return records for cutoff testing. Generated customers and journey IDs are artificial."
+  }
+}
+
