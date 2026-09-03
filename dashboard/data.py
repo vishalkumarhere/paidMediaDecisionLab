@@ -76,7 +76,7 @@ def load_dataset(run):
     dimension['campaign'] = dimension.campaign_id.map(CAMPAIGN_NAMES).fillna(dimension.campaign_id)
     frames['campaign_daily'] = frames['campaign_daily'].merge(dimension, on='campaign_id', validate='many_to_one')
     frames['order_economics'] = frames['order_economics'].merge(
-        frames['order_attribution'][['order_id','campaign_id','touch_session_id']], on='order_id', validate='many_to_one'
+        frames['order_attribution'][['order_id','campaign_id','touch_session_id','touch_at']], on='order_id', validate='many_to_one'
     ).merge(dimension, on='campaign_id', validate='many_to_one')
     return {'manifest':manifest, 'tables':frames, 'dimension':dimension}
 

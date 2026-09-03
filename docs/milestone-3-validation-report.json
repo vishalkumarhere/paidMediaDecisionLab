@@ -1,0 +1,38 @@
+{
+  "release": "milestone_3_decision_screen",
+  "verified_at": "2026-09-01T14:40:56.492325-04:00",
+  "claim_boundary": "Deterministic policy screen on synthetic data; no causal recommendation or spend authorization.",
+  "dataset_sha256": "a58df509f2034733824e62b6eb2cd02e4b39ccc59af96594a431a48f248b06e2",
+  "policy": {
+    "version": "1.0.0",
+    "sha256": "501ff39ba0aee2f8e2d0284413e4c25c46715f5e683226d834d487caabd2fd2b"
+  },
+  "automated_tests": {
+    "tests": 40,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "test_seconds": 10.92,
+  "full_history_results": {
+    "Controlled test candidate": 6
+  },
+  "browser_checks": [
+    "Full-history overview renders the decision record and six-campaign evidence table.",
+    "Currency labels render literally rather than as math markup.",
+    "Last-seven-day selection changes the screen to Hold with zero conversion-mature orders.",
+    "Campaign view renders evidence ID, next check, stop condition and financial bridge.",
+    "Final browser console contains no errors."
+  ],
+  "dependency_check": "pip check: no broken requirements",
+  "requirements_files": [
+    "requirements.txt"
+  ],
+  "documentation": "docs/milestone-3-decision-methodology.md",
+  "remaining_limits": [
+    "No causal lift or marginal response estimate",
+    "No forecast or budget optimization",
+    "No live platform action",
+    "Synthetic data not calibrated to SharkNinja performance"
+  ]
+}

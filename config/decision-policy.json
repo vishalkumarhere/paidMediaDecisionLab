@@ -1,0 +1,14 @@
+{
+  "policy_version": "1.0.0",
+  "minimum_mature_orders": 30,
+  "conversion_maturity_days": 14,
+  "return_maturity_days": 36,
+  "maximum_test_budget_change_fraction": 0.10,
+  "tracking_gap_fraction": 0.20,
+  "tracking_gap_minimum_commerce_orders": 10,
+  "budget_baseline_complete_days": 7,
+  "unit_cost_stress_fraction": 0.10,
+  "additional_refund_stress_fraction": 0.05,
+  "missing_costs_block_growth": true,
+  "unresolved_data_errors_block_growth": true
+}

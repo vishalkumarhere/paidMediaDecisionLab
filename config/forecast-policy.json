@@ -1,0 +1,11 @@
+{
+  "forecast_version": "1.0.0",
+  "horizon_days": 7,
+  "lookback_days": 28,
+  "minimum_history_days": 28,
+  "minimum_backtest_origins": 12,
+  "calibration_fraction": 0.70,
+  "interval_coverage": 0.80,
+  "minimum_spend_change_fraction": -0.10,
+  "maximum_spend_change_fraction": 0.10
+}

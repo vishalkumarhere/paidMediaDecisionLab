@@ -37,6 +37,14 @@ Missing media makes spend and contribution after media NULL. `UNATTRIBUTED` has 
 - Pacing ratio = observed spend / dated planned spend for the same dates. A ratio above 1 means spending above plan, not automatic overspending or poor performance.
 - Reconciliation tracks distinct fulfilled commerce orders, distinct commerce orders with visible purchase events, their gap, and separately labeled overlapping platform claims. Tracking gaps are observations, not proof of a particular failure cause. Zero-sales reporting days remain present.
 
+## Implemented Milestone 3 decision definitions
+
+- Conversion-mature orders have an attributed paid touch at least 14 elapsed days before the information cutoff.
+- Return-mature orders were purchased at least 36 elapsed days before the cutoff. Only reporting dates through that boundary enter mature period economics.
+- Stress contribution = mature observed contribution after media − 10% of mature net COGS − 5% of mature booked revenue. The stress terms are explicit policy assumptions, not predicted costs or returns.
+- Baseline spend is the sum of the last seven complete selected campaign days. A candidate ceiling is baseline × 1.10, rounded to integer cents. It is a policy bound, not a forecast or optimum.
+- A tracking alert requires at least 10 site-wide commerce orders and an untracked share above 20%. The alert is site-wide because missing purchase events cannot be assigned reliably to campaigns.
+
 ## Frozen definitions for later milestones (not calculated yet)
 
 - CPM = USD media spend / impressions × 1,000.
@@ -44,7 +52,17 @@ Missing media makes spend and contribution after media NULL. `UNATTRIBUTED` has 
 - Platform ROAS = latest source-claimed revenue / the same source's media expense and date range. Label the source revenue and date basis beside the result; do not compare it as though it equals business net ROAS.
 - Break-even net-revenue ROAS = 1 / pre-media contribution margin rate, where that rate = contribution before media / net revenue and both are positive. Otherwise undefined. This describes observed unit economics, not profitable marginal scaling.
 - Reported new-customer CAC = media spend / distinct newly acquired customers allocated under the business rule. Newness requires prior customer history. The generator creates synthetic customers before purchases, so a first session is not proof of a first purchase. The 30-day warmup alone cannot establish lifetime newness; later analysis must label observed-history newness or use explicit simulator history, and real imports with insufficient history must report unknown.
-- Cohort maturity = age at cutoff of click cohorts for conversions and purchase cohorts for returns. The policy uses 14 and 36 days respectively. Realized-to-date outcomes remain separate from any modeled final outcome.
 - Future-return provision = expected remaining returns, estimated from earlier mature cohorts or explicit user assumptions. Never subtract all expected returns in addition to already deducted actual returns.
 
 Incrementality is unmeasured throughout these milestones. Attribution, return differences and positive contribution do not establish how outcomes respond to an advertising budget change.
+
+## Implemented Milestone 4 forecast and scenario definitions
+
+- Seven-day point baseline = sum of seven daily forecasts, each using the mean of up to four prior matching weekdays within a 28-day lookback.
+- Forecast error = actual − forecast. Positive bias means actual seven-day totals exceeded the baseline on average.
+- WAPE = sum of absolute seven-day total errors / sum of absolute actual seven-day totals on later evaluation origins. A zero denominator yields NULL.
+- Empirical interval = point forecast plus the 10th and 90th percentiles of errors from earlier calibration origins. Coverage is measured only on later evaluation origins.
+- Scenario order change = spend change / user-assumed marginal cost per order, capped by user-assumed incremental inventory capacity for increases and by baseline forecast orders for decreases.
+- Scenario contribution change = assumed order change × user-assumed pre-media contribution per order − spend change.
+
+Revenue and contribution forecasts continue values reported at the dataset cutoff; they do not model final return-cohort outcomes. Scenario ranges carry baseline forecast error forward but attach no probability model to user assumptions.

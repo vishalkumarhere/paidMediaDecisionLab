@@ -6,7 +6,7 @@
 
 Simulator labels go separately to `evaluation_only/ground_truth.json`. The transform function receives a database loaded from the 12 raw tables only, and SQL reads staging/parameters rather than the evaluation directory. Labels are isolated to prevent accidental analytical leakage; they are not encrypted or a security boundary against someone inspecting the project.
 
-The stack is Python 3.12, DuckDB and Parquet, with pytest for verification. There is no web server, database service, account integration or LLM dependency. Dependency versions are pinned in the requirements files. DuckDB's timezone conversion requires both the bundled timezone database and Python timezone support; these are declared runtime dependencies.
+The stack is Python 3.12, DuckDB and Parquet, Streamlit and Plotly, with pytest for verification. There is no database service, account integration or LLM dependency. All dependency versions are pinned in one `requirements.txt`. DuckDB's timezone conversion requires both the bundled timezone database and Python timezone support; these are declared runtime dependencies.
 
 ## Generation design
 
@@ -36,10 +36,10 @@ Windows runtime used for the release is recorded in `docs/validation-report.json
 
 Tests cover fixed-cent arithmetic, partial and physical refunds, cancellations, missing costs, zero spend, unmatched orders, duplicate keys, foreign keys, creative ownership, snapshot replacement, seven-day boundaries, daylight-saving conversion, future-information exclusion and seeded reproduction. See the validation report for the executed test count and run evidence.
 
-These are foundational correctness checks, not a full production audit. No causal inference, recommendation quality, forecasting accuracy, UI usability or hosting performance has been evaluated yet.
+These checks cover the foundation, deterministic Milestone 3 gates and time-ordered Milestone 4 baseline evaluation, not a full production audit. No causal inference, learned marginal response, final-return forecast, experiment power, UI usability study or hosting performance has been evaluated.
 
 Important simplifications: one SKU and currency; stable synthetic identities; no tax/shipping revenue; initial-known cancellation status; no lifecycle revisions; no marketplace fees, overhead or subscription lifetime value; no inventory movement accounting; complete simulated commerce ledger; no real consent, ingestion, authentication or platform API integration. Cost recovery checks cannot prove the value of returned goods; values remain supplied assumptions. Daily media summaries are period reporting, not causal or cohort estimates.
 
 ## Next implementation boundary
 
-Milestone 3 should derive maturity and data gates, then implement one decision record and screen against the hand fixture. Keep evaluation labels outside the screen's data path, show NULLs honestly, and keep the action traceable to calculations and policy. Do not begin forecasts or publish a demo until the later gates are satisfied.
+The next milestone should address future-return provisioning or causal experiment design. It must specify historical depth, treatment/control requirements, power and failure states before implementation. Workbook/memo exports may follow once every claim can retain its dataset, policy, forecast and scenario provenance.
