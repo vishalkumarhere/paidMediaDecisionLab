@@ -33,7 +33,7 @@ def table(frame, money_columns=(), ratio_columns=(), max_rows=100):
     # CSS is scoped to this table; it does not target Streamlit's internal DOM.
     st.html('''<style>
       .luxe-data {overflow:auto; max-height:440px; border:1px solid #DCDFD5; border-radius:8px;}
-      .luxe-data table {border-collapse:collapse; width:100%; font-size:14px; color:#24372F; background:#FCFBF8;}
+      .luxe-data table {border-collapse:collapse; width:max-content; min-width:100%; font-size:14px; color:#24372F; background:#FCFBF8;}
       .luxe-data th {position:sticky; top:0; background:#EEF1EA; text-align:left; font-weight:600; white-space:nowrap;}
       .luxe-data td,.luxe-data th {padding:13px 15px; border-bottom:1px solid #E4E8DF;}
       .luxe-data tr:last-child td {border-bottom:0;}

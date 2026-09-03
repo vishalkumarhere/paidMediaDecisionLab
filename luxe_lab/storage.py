@@ -93,7 +93,7 @@ def load_raw(con, directory):
 
 def source_hash():
     files = [*ROOT.glob("luxe_lab/*.py"), *ROOT.glob("sql/*.sql"), *ROOT.glob("config/*.json"),
-             ROOT/'pyproject.toml', ROOT/'requirements.txt', ROOT/'requirements-dev.txt']
+             ROOT/'pyproject.toml', ROOT/'requirements.txt']
     h = hashlib.sha256()
     for file in sorted(files):
         h.update(file.relative_to(ROOT).as_posix().encode())

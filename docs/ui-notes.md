@@ -1,6 +1,6 @@
 # Streamlit interface
 
-The data interface adds a read-only exploration layer to the milestone 2 foundation. It does not claim completion of the planned recommendation, forecasting or incrementality work.
+The interface adds read-only exploration, a policy screen, an evaluated baseline forecast and hypothetical scenario controls through milestone 4. It does not claim incrementality, optimization, final-cohort outcomes or authority to change spend.
 
 ## Data correctness
 
@@ -20,4 +20,4 @@ The server binds to `127.0.0.1`. There are no credentials, uploads, external dat
 
 ## Verification
 
-Run `python -m pytest` after installing both `requirements-ui.txt` and `requirements-dev.txt`. UI checks use Streamlit AppTest to exercise all four views, channel/date filters, empty selections, reset and search. Financial tests compare the UI aggregations against the independent fixture, including missing costs and zero spend. Browser checks verify the actual charts and controls in the running app. Release-specific results are recorded separately in the UI validation report.
+Run `python -m pytest` after installing `requirements.txt`. UI checks use Streamlit AppTest to exercise all five views, the decision screen, forecast/scenario controls, channel/date filters, empty selections, reset and search. Financial tests compare the UI aggregations against the independent fixture, including missing costs and zero spend. Forecast tests enforce time ordering and scenario bounds. Browser checks verify the actual charts and controls in the running app. Release-specific results are recorded separately in the validation reports.

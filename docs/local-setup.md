@@ -15,4 +15,4 @@ Choose a fresh output folder for each build. The supplied `data/demo-final` samp
 
 All 27 tests passed from this location using its own environment. All 17 supplied data files match their release checksums, and dependency validation passed. Details are in `docs/validation-report.json`.
 
-The Streamlit data interface has now been added. Start it with `.\.venv\Scripts\python.exe -m streamlit run streamlit_app.py`, then open `http://127.0.0.1:8501`. Its dependencies are installed in this project's environment. The UI adds charts, filters, order drill-downs and CSV downloads; the automated recommendation engine is still unimplemented.
+Install the single dependency set with `.\.venv\Scripts\python.exe -m pip install -r requirements.txt`. Start the Streamlit interface with `.\.venv\Scripts\python.exe -m streamlit run streamlit_app.py`, then open `http://127.0.0.1:8501`. The UI adds a versioned decision screen, charts, filters, order drill-downs and CSV downloads. Its controlled-test state requires analyst review and is not an automated budget recommendation.

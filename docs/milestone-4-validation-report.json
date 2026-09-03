@@ -1,0 +1,99 @@
+{
+  "release": "milestone_4_forecast_and_scenarios",
+  "verified_at": "2026-09-01T22:06:21.876387-04:00",
+  "claim_boundary": "Time-series continuation benchmark and assumption-driven scenario; no causal lift, optimization, final-return forecast or spend authorization.",
+  "dataset_sha256": "a58df509f2034733824e62b6eb2cd02e4b39ccc59af96594a431a48f248b06e2",
+  "forecast_policy": {
+    "version": "1.0.0",
+    "sha256": "c288dd193fed74fb753328532d1c00cb188f4cbe96f826f14c51eec33ee850de"
+  },
+  "automated_tests": {
+    "tests": 46,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "test_seconds": 49.235,
+  "seven_day_sample": {
+    "orders": {
+      "point": 67.75,
+      "lower": 43.5,
+      "upper": 91.95,
+      "wape": 0.14691046658259774,
+      "mae": 10.130434782608695,
+      "bias": -4.413043478260869,
+      "empirical_coverage": 0.8695652173913043
+    },
+    "spend_cents": {
+      "point": 239206.5,
+      "lower": 214684.5,
+      "upper": 266555.3,
+      "wape": 0.04781674619007206,
+      "mae": 11528.239130434782,
+      "bias": -3782.9565217391305,
+      "empirical_coverage": 1.0
+    },
+    "net_revenue_cents": {
+      "point": 4157680.25,
+      "lower": 2905255.4,
+      "upper": 5335554.3,
+      "wape": 0.18482955936821824,
+      "mae": 780698.9239130435,
+      "bias": 117623.27173913043,
+      "empirical_coverage": 0.8695652173913043
+    },
+    "contribution_after_media_cents": {
+      "point": 1786504.25,
+      "lower": 1337416.65,
+      "upper": 2158286.3,
+      "wape": 0.21418937360851173,
+      "mae": 388961.6630434783,
+      "bias": 112396.05434782608,
+      "empirical_coverage": 0.43478260869565216
+    }
+  },
+  "example_scenario": {
+    "baseline_spend_cents": 239207,
+    "scenario_spend_cents": 263128,
+    "spend_change_fraction": 0.1,
+    "spend_delta_cents": 23921,
+    "baseline_orders": 67.75,
+    "scenario_orders": 74.5245681110167,
+    "incremental_orders": 6.774568111016709,
+    "unconstrained_incremental_orders": 6.774568111016709,
+    "incremental_order_capacity": 111,
+    "inventory_limited": false,
+    "marginal_cost_per_order_cents": 3531,
+    "marginal_contribution_before_media_per_order_cents": 24976,
+    "baseline_contribution_cents": 1786504,
+    "scenario_contribution_cents": 1931785,
+    "scenario_contribution_lower_cents": 1482697,
+    "scenario_contribution_upper_cents": 2303567,
+    "incremental_contribution_cents": 145281,
+    "break_even_marginal_cost_per_order_cents": 24976,
+    "scenario_type": "hypothetical_assumption_not_causal",
+    "forecast_version": "1.0.0",
+    "forecast_policy_sha256": "c288dd193fed74fb753328532d1c00cb188f4cbe96f826f14c51eec33ee850de"
+  },
+  "browser_checks": [
+    "Forecast and empirical range render with readable labels.",
+    "Later-origin contribution under-coverage warning renders at 43.5%.",
+    "Maximum +10% spend scenario updates live.",
+    "Zero incremental-order capacity caps orders while preserving scenario spend.",
+    "Milestone 3 Hold state labels scenario ineligible.",
+    "Reset callback restores Full history in the live browser.",
+    "Final browser console contains no errors."
+  ],
+  "dependency_check": "pip check: no broken requirements",
+  "requirements_files": [
+    "requirements.txt"
+  ],
+  "documentation": "docs/milestone-4-forecast-methodology.md",
+  "remaining_limits": [
+    "No final-return cohort estimate",
+    "No causal or learned marginal response",
+    "No budget optimization or live action",
+    "Inventory uses an editable one-unit-per-order approximation",
+    "Synthetic data not calibrated to SharkNinja performance"
+  ]
+}

@@ -84,3 +84,27 @@ def tracking(frame):
     figure.update_xaxes(tickformat='%b %d',nticks=6)
     figure.update_yaxes(title_text='Orders')
     return figure
+
+
+def forecast(history, future, target, label):
+    divisor = 1 if target == 'orders' else 100
+    recent = history.tail(42)
+    figure = go.Figure()
+    figure.add_trace(go.Scatter(x=[v.isoformat() for v in future.period],
+        y=values(future[f'{target}_upper'],divisor),name='80% range',mode='lines',
+        line=dict(width=0),hoverinfo='skip',showlegend=False))
+    figure.add_trace(go.Scatter(x=[v.isoformat() for v in future.period],
+        y=values(future[f'{target}_lower'],divisor),name='80% empirical range',mode='lines',
+        line=dict(width=0),fill='tonexty',fillcolor='rgba(138,167,152,0.24)',hoverinfo='skip'))
+    figure.add_trace(go.Scatter(x=[v.isoformat() for v in recent.period],y=values(recent[target],divisor),
+        name='Observed',mode='lines+markers',line=dict(color=GREEN,width=2.5),marker=dict(size=4),
+        hovertemplate=('%{y:,.1f}' if target=='orders' else '$%{y:,.2f}')+'<extra>Observed</extra>'))
+    figure.add_trace(go.Scatter(x=[v.isoformat() for v in future.period],
+        y=values(future[f'{target}_point'],divisor),name='Baseline forecast',mode='lines+markers',
+        line=dict(color=ORANGE,width=3,dash='dash'),marker=dict(size=6),
+        hovertemplate=('%{y:,.1f}' if target=='orders' else '$%{y:,.2f}')+'<extra>Baseline forecast</extra>'))
+    finish(figure,360)
+    figure.update_layout(hovermode='x unified')
+    figure.update_xaxes(tickformat='%b %d',nticks=8)
+    figure.update_yaxes(title_text=label,tickprefix='' if target=='orders' else '$')
+    return figure
